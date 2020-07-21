@@ -86,14 +86,14 @@ def arrays_dates(i_usd, i_euro):
 def calculation_euro_usd():
     bold = workbook.add_format({'bold': True})
     worksheet.write(0, 6, 'EUR/USD', bold)
-    formula_format = workbook.add_format({'num_format': '# ##0.0000'})
+    formula_format = workbook.add_format({'num_format': '0.0000'})
     worksheet.write_array_formula('G2:G11', '{=E2:E11/B2:B11}', formula_format)
 
 
 def check_for_numbers():
     bold = workbook.add_format({'bold': True})
     worksheet.write('I2', 'Проверка числовых ячеек (подсчет автосуммы):', bold)
-    formula_format = workbook.add_format({'num_format': '# ##0.0000'})
+    formula_format = workbook.add_format({'num_format': '0.0000'})
     worksheet.write_formula('J2', '=SUM(B2:B11,C2:C11,E2:E11,F2:F11,G2:G11)', formula_format)
 
 
